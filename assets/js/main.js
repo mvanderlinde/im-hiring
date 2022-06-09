@@ -80,4 +80,17 @@
 
 		}
 
+		$('a').on('click', function() {
+			try {
+				insights.track({
+				  id: "link-click",
+				  parameters: {
+				    url: this.href,
+				  },
+				});
+			} catch (e) {
+				console.log(e);
+			}
+		});
+
 })(jQuery);
